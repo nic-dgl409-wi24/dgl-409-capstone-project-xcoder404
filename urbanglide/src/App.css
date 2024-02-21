@@ -38,6 +38,14 @@ h3 {
   background-color: white;
 }
 
+.active{
+  background-color: white; 
+}
+
+.footer-active{
+  color: #000000;
+}
+
 .hero {
   position: relative;
   width: 100vw;
@@ -211,7 +219,10 @@ h3 {
   padding: 15px 20px;
   border-radius: 50px;
   font-size: 1.5rem;
-  margin-top:30px;
+  display: flex;
+justify-content: center;
+align-items: center;
+  margin:30px auto 0;
   cursor: pointer;
   transition: ease 0.3s;
 }
