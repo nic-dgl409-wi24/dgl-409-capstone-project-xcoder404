@@ -7,6 +7,8 @@ import image3 from "../images/ridding5.avif";
 import image4 from "../images/OIP.png";
 import image5 from "../images/OIP_1.png";
 import { FaArrowRight } from "react-icons/fa";
+import {Link} from "react-router-dom";
+
 
 
 
@@ -158,7 +160,9 @@ function Home() {
         <h2>
           Find your first <span class="title-color">Ride!!</span>
         </h2>
+        <Link to="/form">
         <button class="btn-ride">Let's Ride &nbsp; <FaArrowRight /></button>
+        </Link>
       </div>
     </div>
   );
