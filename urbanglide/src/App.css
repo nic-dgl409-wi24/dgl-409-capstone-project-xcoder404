@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#root{
   overflow-x: hidden;
 }
 
@@ -227,6 +230,9 @@ align-items: center;
   transition: ease 0.3s;
 }
 
+.urban-ride a{
+  text-decoration: none;
+}
 .btn-ride:hover{
   background-color: #059f05;
 }
@@ -240,8 +246,31 @@ align-items: center;
 }
 
 
+.urban-search{
+  display: flex;
+  margin: 100px auto;
+  height: 550px;
+  width: 1000px;
+  /* background-color: #202020; */
+}
 
+.map-section{
+  /* background-color: #00dd00; */
+  height: 500px;
+  width: 100%;
+}
 
+.form-section{
+  /* background-color: #000000; */
+  height: 100%;
+  width: 100%;
+  padding:40px;
+}
+
+/* .map-section iframe{
+  height: 100%;
+  width: 100%;
+} */
 
 
 
