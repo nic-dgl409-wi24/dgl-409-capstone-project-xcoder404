@@ -25,7 +25,8 @@ function Home() {
             Rent an e-scooter and explore the urban landscape like never before.
             Convenient, eco-friendly, and fun.
           </p>
-          <button className="hero-button">Get Started</button>
+          <Link to="/signup">
+          <button className="hero-button">Get Started</button></Link>
         </div>
       </div>
       <div class="urban-intro">

@@ -273,6 +273,7 @@ h3 {
   outline: none;
   border-bottom: 2px solid #00dd00;
   padding: 10px;
+  margin: 50px 0;
 }
 
 .search-btn {
@@ -288,10 +289,58 @@ h3 {
   transition: ease 0.3s;
 }
 
-.search-btn:hover{
+.search-btn:hover {
   background-color: #059f05;
 }
 
+
+.urban-signup{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin:100px auto;
+  gap:2rem;
+  background-color: #202020;
+  padding: 50px;
+  color: white;
+  border-radius: 15px;
+}
+
+.urban-signup input, .urban-signup button{
+border: none;
+outline: none;
+}
+
+.urban-signup input{
+  padding: 10px;
+  background-color: transparent;
+  border-bottom: 2px solid #00dd00;
+}
+
+.urban-signup button{
+  background-color: #00dd00;
+width: 50%;
+margin: 0 auto;
+cursor: pointer;
+border-radius: 50px;
+font-size: 1rem;
+padding:5px 10px;
+transition: ease 0.3s;
+}
+
+.urban-signup button:hover{
+  background-color: #059f05;
+}
+
+.urban-signup a{
+  color: #00dd00;
+  transition: ease 0.3s;
+}
+
+.urban-signup a:hover{
+  color: #059f05;
+}
 .footer {
   background-color: #202020;
   color: white;
@@ -304,7 +353,9 @@ h3 {
   text-decoration: none;
   color: white;
 }
-
+.footer-navigation ul{
+  list-style-type: none;
+}
 .footer-navigation li {
   font-size: 1.2rem;
   padding: 5px 0;

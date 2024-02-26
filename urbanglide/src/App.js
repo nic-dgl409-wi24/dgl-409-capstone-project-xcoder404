@@ -6,6 +6,7 @@ import Blogs from "./pages/Blogs";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Form from "./components/Form";
+import Signup from "./components/Signup";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/form" element={<Form />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
       <div className="footer">
         <div className="contact">
