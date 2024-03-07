@@ -27,6 +27,7 @@ const Recenter = ({ lat, lng, zoom }) => {
   }, [lat, lng, zoom]);
   return null;
 };
+
 const getRandomCoordinates = (latitude, longitude, radius, numPoints) => {
   const randomCoords = [];
   for (let i = 0; i < numPoints; i++) {
@@ -38,6 +39,7 @@ const getRandomCoordinates = (latitude, longitude, radius, numPoints) => {
   }
   return randomCoords;
 };
+
 function Form() {
   const [postalCode, setPostalCode] = useState("");
   const [error, setError] = useState("");
@@ -48,8 +50,8 @@ function Form() {
     zoom: 10,
     code: "",
   });
-  const [currentPostalPlace, setCurrentPostalPlace] = useState("");
 
+  const [currentPostalPlace, setCurrentPostalPlace] = useState("");
   const [randomMarkers, setRandomMarkers] = useState([]);
   const [nearbyPlaces, setNearbyPlaces] = useState([]);
   const handleChange = (e) => {
@@ -99,7 +101,12 @@ function Form() {
         console.log("nearbyPlacesRes", nearbyPlacesRes.geonames);
         setNearbyPlaces(nearbyPlacesRes.geonames);
 
-        const randomCoords = getRandomCoordinates(latitude, longitude, 5000, 5);
+        const randomCoords = getRandomCoordinates(
+          latitude,
+          longitude,
+          2000,
+          10
+        );
         setRandomMarkers(randomCoords);
       } else {
         setError("Please enter a valid postal code of canada");
@@ -143,10 +150,10 @@ function Form() {
 
             <Marker position={[location.latitude, location.longitude]}>
               <Tooltip direction="top" offset={[13, 0]} permanent>
-                <p style={{ fontSize: "16px" }}>
+                <p style={{ fontSize: "16px", color: "green" }}>
                   <strong>{location.place}</strong>
                 </p>
-                <strong>{location.code}</strong>
+                <strong style={{ color: "green" }}>{location.code}</strong>
               </Tooltip>
             </Marker>
           </MapContainer>
@@ -170,6 +177,15 @@ function Form() {
               {currentPostalPlace}
             </p>
           )}
+
+          <h2>Available locations</h2>
+          <ul>
+            {nearbyPlaces?.map((place, index) => (
+              <li key={index}>
+                <strong>{place.name}</strong>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

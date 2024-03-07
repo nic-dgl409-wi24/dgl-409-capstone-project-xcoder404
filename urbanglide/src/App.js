@@ -27,6 +27,9 @@ function App() {
             <li>
               <NavLink to="/contact" activeClassName="active">Contact</NavLink>
             </li>
+            <li>
+              <NavLink to="/signup" activeClassName="active">Sign Up</NavLink>
+            </li>
           </ul>
         </nav>
       </div>
@@ -62,7 +65,9 @@ function App() {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
-            
+            <li>
+              <Link to="/signup">Sign up</Link>
+            </li>
           </ul>
         </nav>
       </div>
