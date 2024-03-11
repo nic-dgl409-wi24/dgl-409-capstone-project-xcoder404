@@ -7,12 +7,14 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Form from "./components/Form";
 import Signup from "./components/Signup";
+import Login from "./components/Login";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 function App() {
   return (
     <Router>
       <div className="navigation">
+        <body>
         <nav>
           <ul>
             <li>
@@ -32,6 +34,7 @@ function App() {
             </li>
           </ul>
         </nav>
+        </body>
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -40,6 +43,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/form" element={<Form />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <div className="footer">
         <div className="contact">

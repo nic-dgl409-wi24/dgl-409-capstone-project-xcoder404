@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *,
 *::after,
 *::before {
@@ -10,12 +12,26 @@
   overflow-x: hidden;
 }
 
+h1, h2, h3, h4, h5, h6{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+  font-size: 2.5rem;
+}
 h2 {
   font-size: 2rem;
 }
 
 h3 {
   font-size: 1.7rem;
+}
+
+body, .footer{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .navigation ul {
   display: flex;
@@ -276,7 +292,7 @@ h3 {
   margin: 50px 0;
 }
 
-.form-section ul{
+.form-section ul {
   list-style-type: none;
 }
 .search-btn {
@@ -296,53 +312,99 @@ h3 {
   background-color: #059f05;
 }
 
+.urban-locations{
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 100%;
+  padding:20px;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+}
 
+.urban-locations:hover{
+  background-color: #9c9c9c;
+  cursor: pointer;
+}
 .urban-signup{
   text-align: center;
   display: flex;
   flex-direction: column;
   width: 30%;
-  margin:100px auto;
-  gap:2rem;
+  margin: 100px auto;
+  gap: 2rem;
   background-color: #202020;
   padding: 50px;
   color: white;
   border-radius: 15px;
 }
 
-.urban-signup input, .urban-signup button{
-border: none;
-outline: none;
+.urban-signup form{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.urban-signup input{
+.urban-signup input,
+.urban-signup button {
+  border: none;
+  outline: none;
+}
+
+.urban-signup input {
   padding: 10px;
   background-color: transparent;
   border-bottom: 2px solid #00dd00;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
 }
 
-.urban-signup button{
+.urban-signup button {
   background-color: #00dd00;
-width: 50%;
-margin: 0 auto;
-cursor: pointer;
-border-radius: 50px;
-font-size: 1rem;
-padding:5px 10px;
-transition: ease 0.3s;
+  width: 50%;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  transition: ease 0.3s;
 }
 
-.urban-signup button:hover{
+.urban-signup button:hover {
   background-color: #059f05;
 }
+.urban-skip{
+  border: 2px solid #00dd00 !important;
+  background-color: #202020 !important;
+}
 
-.urban-signup a{
+.urban-skip:hover{
+  background-color: #00dd00 !important;
+  color: white !important;
+}
+.urban-skip a{
+  color: white !important;
+  text-decoration: none;
+}
+
+.urban-signup a {
   color: #00dd00;
   transition: ease 0.3s;
 }
 
-.urban-signup a:hover{
-  color: #059f05;
+
+
+.about-head {
+  display: flex;
+  padding: 50px 100px;
+  justify-content: space-between;
+}
+
+.about-head p {
+  width: 50%;
 }
 .footer {
   background-color: #202020;
@@ -356,7 +418,7 @@ transition: ease 0.3s;
   text-decoration: none;
   color: white;
 }
-.footer-navigation ul{
+.footer-navigation ul {
   list-style-type: none;
 }
 .footer-navigation li {

@@ -11,6 +11,8 @@ import {
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import { FaArrowRight } from "react-icons/fa";
+
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -108,6 +110,9 @@ function Form() {
           10
         );
         setRandomMarkers(randomCoords);
+
+      
+        
       } else {
         setError("Please enter a valid postal code of canada");
       }
@@ -115,10 +120,13 @@ function Form() {
       setError("Error while fetching your request");
       console.log(error);
     }
+   
   };
-
+  
+        
   return (
     <div class="urban-form">
+      <body>
       <div class="urban-search">
         <div class="map-section">
           <MapContainer
@@ -179,15 +187,18 @@ function Form() {
           )}
 
           <h2>Available locations</h2>
-          <ul>
+          
             {nearbyPlaces?.map((place, index) => (
-              <li key={index}>
-                <strong>{place.name}</strong>
-              </li>
+              <div key={index} class="urban-locations">
+                  <h4>{place.name}</h4>
+                 <span><FaArrowRight /></span>
+              </div>
             ))}
-          </ul>
+                  
+         
         </div>
       </div>
+      </body>
     </div>
   );
 }

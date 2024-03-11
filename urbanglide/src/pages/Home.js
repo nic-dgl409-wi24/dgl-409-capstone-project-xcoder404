@@ -15,6 +15,7 @@ import {Link} from "react-router-dom";
 function Home() {
   return (
     <div>
+      <body>
       <div className="hero">
         <div className="hero__content">
           <h1>
@@ -165,6 +166,7 @@ function Home() {
         <button class="btn-ride">Let's Ride &nbsp; <FaArrowRight /></button>
         </Link>
       </div>
+      </body>
     </div>
   );
 }
