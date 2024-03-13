@@ -33,6 +33,10 @@ body, .footer{
   font-weight: 400;
   font-style: normal;
 }
+
+a{
+  text-decoration: none;
+}
 .navigation ul {
   display: flex;
 
@@ -102,7 +106,7 @@ body, .footer{
   padding: 30px 0;
 }
 
-.hero-button {
+.hero-button, .scooter-button {
   background-color: #00dd00;
   border: none;
   outline: none;
@@ -113,7 +117,7 @@ body, .footer{
   transition: ease 0.3s;
 }
 
-.hero-button:hover {
+.hero-button:hover, .scooter-button:hover {
   background-color: #059f05;
 }
 .title-color {
@@ -198,7 +202,7 @@ body, .footer{
 .urban-discovery {
   background-color: #202020;
   color: white;
-  padding: 40px;
+  padding: 450px 40px 40px;
 }
 
 .urban-discovery > h2 {
@@ -251,7 +255,13 @@ body, .footer{
 .btn-ride:hover {
   background-color: #059f05;
 }
-
+.urban-form{
+  height: 1500px;
+}
+.urban-form h1{
+  text-align: center;
+  padding-top: 60px;
+}
 .urban-map {
   display: flex;
   margin: 100px auto;
@@ -262,7 +272,7 @@ body, .footer{
 
 .urban-search {
   display: flex;
-  margin: 100px auto;
+  margin: 100px auto 50px;
   height: 550px;
   width: 1000px;
   /* background-color: #202020; */
@@ -274,10 +284,26 @@ body, .footer{
   width: 100%;
 }
 
+
+.urban-profile{
+  text-align: center;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  gap: 2rem;
+}
+
+.urban-profile p{
+padding: 20px 0;;
+}
+
+
 .form-section {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .8rem;
   font-size: 1.2rem;
   height: 100%;
   width: 100%;
@@ -289,7 +315,7 @@ body, .footer{
   outline: none;
   border-bottom: 2px solid #00dd00;
   padding: 10px;
-  margin: 50px 0;
+  margin-top:50px;
 }
 
 .form-section ul {
@@ -312,19 +338,32 @@ body, .footer{
   background-color: #059f05;
 }
 
+.urban-form h2{
+  text-align: center;
+}
 .urban-locations{
   border: 2px solid black;
   border-radius: 5px;
-  width: 100%;
+  align-items: center;
+  width: 50%;
   padding:20px;
+  margin:20px auto;
   transition: 0.3s ease;
   display: flex;
   justify-content: space-between;
 }
 
-.urban-locations:hover{
-  background-color: #9c9c9c;
-  cursor: pointer;
+.book-btn{
+  background-color: #00dd00;
+  border-radius: 5px;
+cursor: pointer;
+  outline:none;
+  border: none;
+  padding: 10px 15px;
+}
+
+.book-btn:hover{
+  background-color: #059f05;
 }
 .urban-signup{
   text-align: center;
@@ -395,17 +434,78 @@ body, .footer{
   transition: ease 0.3s;
 }
 
+.urban-kick{
+  display: flex;
+  padding:50px;
+}
 
+.cards a{
+  color:black;
+}
 
+.kick-info li, .offroad-info li{
+  padding:30px 0;
+}
+
+.scooter-button{
+  margin: 0 auto;
+  display: flex;
+}
 .about-head {
   display: flex;
-  padding: 50px 100px;
+  padding: 50px 100px 350px;
   justify-content: space-between;
 }
 
+.back-image{
+  width: 70%;
+  height:600px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+}
 .about-head p {
   width: 50%;
 }
+
+
+.reviews{
+  display:flex;
+  padding: 50px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.urban-reviews h2{
+  text-align: center;
+  padding: 60px;
+}
+.reviews h3{
+  padding: 30px;
+}
+.reviews .review-card{
+  padding: 30px;
+}
+
+.reviews .review-card:nth-of-type(2){
+  border-right: 2px solid #00dd00;
+  border-left: 2px solid #00dd00;
+  
+}
+.reviews img{
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+
+}
+
+
 .footer {
   background-color: #202020;
   color: white;

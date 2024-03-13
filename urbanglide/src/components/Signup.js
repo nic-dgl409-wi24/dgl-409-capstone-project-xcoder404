@@ -9,7 +9,10 @@ function Signup() {
 
   const [values, setValues] = useState({
     emailId:'',
-    password: ''
+    password: '',
+    firstName: '',
+    lastName:'',
+    phoneNo: ''
   })
  const navigate= useNavigate();
 const[errors, setErrors] = useState({})
@@ -23,6 +26,7 @@ const handleInput= (event) => {
       const response =  axios.post("http://localhost:5000/signup", values)
       .then(res => {navigate('/login');})
       .catch(err => console.log(err));
+      localStorage.setItem("userData", JSON.stringify(values));
       console.log(response.data);
       // Optionally, you can redirect the user to another page upon successful signup
     } catch (error) {
@@ -37,6 +41,20 @@ const handleInput= (event) => {
 
         <h1>Sign Up</h1>
         <form action="" onSubmit={handleSubmit}>
+        <input
+            type="text"
+            name="firstName"
+            placeholder="Enter your first name"
+            value={values.firstName}
+              onChange={handleInput}
+          ></input>
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Enter your last name"
+            value={values.lastName}
+              onChange={handleInput}
+          ></input>
           <input
             type="email"
             name="emailId"
@@ -52,6 +70,14 @@ const handleInput= (event) => {
             value={values.password}
               onChange={handleInput}
           ></input>
+            <input
+            type="number"
+            name="phoneNo"
+            placeholder="Enter your phone number"
+            value={values.phoneNo}
+              onChange={handleInput}
+          ></input>
+         
           <button type="submit">Start your journey</button>
           <button class="urban-skip"><Link to="/form">Skip for now</Link></button>
         </form>
@@ -59,6 +85,7 @@ const handleInput= (event) => {
           Already have an account? <Link to="/login">Sign in</Link>
         </p>
         </div>
+       
       </body>
     </div>
   );

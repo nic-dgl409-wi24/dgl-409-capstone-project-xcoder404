@@ -13,7 +13,6 @@ import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import { FaArrowRight } from "react-icons/fa";
 
-
 let DefaultIcon = L.icon({
   iconUrl: icon,
   shadowUrl: iconShadow,
@@ -62,6 +61,10 @@ function Form() {
     setPostalCode(e.target.value);
   };
 
+  
+  const handleBooking = () => {
+    alert("Booking successful!");
+  };
   const onClick = async () => {
     setCurrentPostalPlace("");
     const flatZipCode = postalCode.replaceAll(/\s/g, "");
@@ -110,9 +113,6 @@ function Form() {
           10
         );
         setRandomMarkers(randomCoords);
-
-      
-        
       } else {
         setError("Please enter a valid postal code of canada");
       }
@@ -120,84 +120,87 @@ function Form() {
       setError("Error while fetching your request");
       console.log(error);
     }
-   
   };
-  
-        
+
+
+
+
+
   return (
     <div class="urban-form">
       <body>
-      <div class="urban-search">
-        <div class="map-section">
-          <MapContainer
-            style={{ height: "500px", width: "100%" }}
-            center={[location.latitude, location.longitude]}
-            zoom={10}
-            scrollWheelZoom={true}
-          >
-            <Recenter
-              lat={location.latitude}
-              lng={location.longitude}
-              zoom={location.zoom}
-            />
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            {nearbyPlaces?.length &&
-              nearbyPlaces.map((place, index) => (
-                <Marker
-                  key={index}
-                  position={[place.lat, place.lng]} // Position should be an array of latitude and longitude
-                >
-                  <Tooltip direction="top" offset={[13, 0]} permanent>
-                    <strong>{place.name}</strong>
-                  </Tooltip>
-                </Marker>
-              ))}
+      <h1>Let's find your <span class="title-color">ride!!</span></h1>
 
-            <Marker position={[location.latitude, location.longitude]}>
-              <Tooltip direction="top" offset={[13, 0]} permanent>
-                <p style={{ fontSize: "16px", color: "green" }}>
-                  <strong>{location.place}</strong>
-                </p>
-                <strong style={{ color: "green" }}>{location.code}</strong>
-              </Tooltip>
-            </Marker>
-          </MapContainer>
+        <div class="urban-search">
+          <div class="map-section">
+            <MapContainer
+              style={{ height: "500px", width: "100%" }}
+              center={[location.latitude, location.longitude]}
+              zoom={10}
+              scrollWheelZoom={true}
+            >
+              <Recenter
+                lat={location.latitude}
+                lng={location.longitude}
+                zoom={location.zoom}
+              />
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              {nearbyPlaces?.length &&
+                nearbyPlaces.map((place, index) => (
+                  <Marker
+                    key={index}
+                    position={[place.lat, place.lng]} // Position should be an array of latitude and longitude
+                  >
+                    <Tooltip direction="top" offset={[13, 0]} permanent>
+                      <strong>{place.name}</strong>
+                    </Tooltip>
+                  </Marker>
+                ))}
+
+              <Marker position={[location.latitude, location.longitude]}>
+                <Tooltip direction="top" offset={[13, 0]} permanent>
+                  <p style={{ fontSize: "16px", color: "green" }}>
+                    <strong>{location.place}</strong>
+                  </p>
+                  <strong style={{ color: "green" }}>{location.code}</strong>
+                </Tooltip>
+              </Marker>
+            </MapContainer>
+          </div>
+          <div class="form-section">
+            <label for="postalCode">Location</label>
+            <input
+              type="search"
+              value={postalCode}
+              name="postalCode"
+              onChange={handleChange}
+              placeholder="Enter zip code of your lcoation"
+            ></input>
+ {error && (
+              <p style={{ color: "red", fontSize: ".75rem", marginBottom: "50px" }}>{error}</p>
+            )}
+            {currentPostalPlace && (
+              <p style={{ color: "green", fontSize: ".75rem" }}>
+                {currentPostalPlace}
+              </p>
+            )}
+            <button type="button" onClick={onClick} class="search-btn">
+              Search
+            </button>
+           
+          </div>
         </div>
-        <div class="form-section">
-          <label for="postalCode">Location</label>
-          <input
-            type="search"
-            value={postalCode}
-            name="postalCode"
-            onChange={handleChange}
-            placeholder="Enter zip code of your lcoation"
-          ></input>
+        <h2>Available locations</h2>
 
-          <button type="button" onClick={onClick} class="search-btn">
-            Search
-          </button>
-          {error && <p style={{ color: "red", fontSize: ".75rem" }}>{error}</p>}
-          {currentPostalPlace && (
-            <p style={{ color: "green", fontSize: ".75rem" }}>
-              {currentPostalPlace}
-            </p>
-          )}
-
-          <h2>Available locations</h2>
-          
-            {nearbyPlaces?.map((place, index) => (
-              <div key={index} class="urban-locations">
-                  <h4>{place.name}</h4>
-                 <span><FaArrowRight /></span>
-              </div>
-            ))}
-                  
-         
-        </div>
-      </div>
+        {nearbyPlaces?.map((place, index) => (
+          <div key={index} class="urban-locations">
+            <h4>{place.name}</h4>
+            <button class="book-btn" onClick={handleBooking}>Book now</button>
+          </div>
+        ))}
       </body>
     </div>
   );

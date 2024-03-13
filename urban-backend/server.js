@@ -23,10 +23,13 @@ app.get('/', (re, res)=>{
 // Define routes to handle API requests here...
 
 app.post('/signup', (req, res) => {
-    const sql = "INSERT INTO signup (`emailId`, `password`) VALUES (?)";
+    const sql = "INSERT INTO signup (`emailId`, `password`, `firstName`,`lastName`,`phoneNo`) VALUES (?)";
     const values = [
         req.body.emailId,
-        req.body.password
+        req.body.password,
+        req.body.firstName,
+        req.body.lastName,
+        req.body.phoneNo,
     ]
     db.query(sql,[values], (err, data) => {
         if(err) return res.json("error");
@@ -53,6 +56,21 @@ app.post('/login', (req, res) => {
         }
 
         return res.json({ message: "Login successful" });
+    });
+});
+
+app.get('/getUserData', (req, res) => {
+    const emailId = req.query.emailId; // Get the email from query parameters
+    const sql = "SELECT * FROM signup WHERE emailId = ?";
+    db.query(sql, [emailId], (err, result) => {
+        if (err) {
+            console.error("Error retrieving user data:", err);
+            return res.status(500).json({ error: "Failed to retrieve user data" });
+        }
+        if (result.length === 0) {
+            return res.status(404).json({ error: "User not found" });
+        }
+        return res.json(result[0]); // Send only the first row (assuming email is unique)
     });
 });
 

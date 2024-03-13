@@ -8,6 +8,9 @@ import About from "./pages/About";
 import Form from "./components/Form";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import Kick from "./components/Kick";
+import Offroad from "./components/Offroad";
+import Profile from "./pages/Profile";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 function App() {
@@ -32,6 +35,9 @@ function App() {
             <li>
               <NavLink to="/signup" activeClassName="active">Sign Up</NavLink>
             </li>
+            <li>
+              <NavLink to="/profile" activeClassName="active">My Profile</NavLink>
+            </li>
           </ul>
         </nav>
         </body>
@@ -44,6 +50,9 @@ function App() {
         <Route path="/form" element={<Form />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/kick" element={<Kick />} />
+        <Route path="/offroad" element={<Offroad />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <div className="footer">
         <div className="contact">
@@ -71,6 +80,9 @@ function App() {
             </li>
             <li>
               <Link to="/signup">Sign up</Link>
+            </li>
+            <li>
+              <Link to="/profile">Profile</Link>
             </li>
           </ul>
         </nav>

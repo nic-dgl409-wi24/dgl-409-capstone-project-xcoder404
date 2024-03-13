@@ -71,92 +71,25 @@ function Home() {
           Explore our <span class="title-color">vehicles</span>
         </h2>
         <div class="cards">
+          <Link to="/kick">
           <div class="card">
             <img src={image4} alt="Card 3" />
             <div class="card-content">
               <h3>Kick scooter</h3>
             </div>
           </div>
+          </Link>
+          <Link to="/offroad">
           <div class="card">
             <img src={image5} alt="Card 3" />
             <div class="card-content">
               <h3>Off road scooter</h3>
             </div>
           </div>
+          </Link>
         </div>
       </div>
-      <div class="urban-discovery">
-        <h2>
-          Discover the Freedom of Urban<span class="title-color">Glide</span>
-        </h2>
-        <div class="urban-lists">
-          <h3>
-            <span class="title-color">Convenient</span> Rentals:
-          </h3>
-          <div class="urban-sublist">
-            <p>
-              &bull; Use a visually appealing background image or video showing
-              people using UrbanGlide e-scooters.
-            </p>
-            <p>
-              &bull; Display a bold heading like "Convenient Rentals" or "Rent
-              with Ease."
-            </p>
-            <p>
-              &bull; Provide a brief description of the rental process,
-              emphasizing the user-friendly nature of the mobile app.
-            </p>
-            <p>
-              &bull; Include a prominent CTA button labeled "Rent Now" or "Get
-              Started" that directs users to the rental page or app download.
-            </p>
-          </div>
-          <h3>
-            <span class="title-color">Safety</span> First:
-          </h3>
-          <div class="urban-sublist">
-            <p>
-              &bull; Select a background image or color scheme that conveys
-              safety and security, such as a helmet or safety gear.
-            </p>
-            <p>
-              &bull; Use a heading like "Safety is Our Priority" or "Ride with
-              Confidence."
-            </p>
-            <p>
-              &bull; Provide details about the safety measures taken by
-              UrbanGlide, including regular maintenance and adherence to safety
-              standards.
-            </p>
-            <p>
-              &bull; Incorporate testimonials or quotes from satisfied customers
-              regarding their positive experiences with UrbanGlide's safety
-              features.
-            </p>
-          </div>
-          <h3>
-            <span class="title-color">Eco</span> Friendly Travel:
-          </h3>
-          <div class="urban-sublist">
-            <p>
-              &bull; Use a visually appealing background image or video showing
-              people using UrbanGlide e-scooters.
-            </p>
-            <p>
-              &bull; Display a bold heading like "Convenient Rentals" or "Rent
-              with Ease."
-            </p>
-            <p>
-              &bull; Provide a brief description of the rental process,
-              emphasizing the user-friendly nature of the mobile app.
-            </p>
-            <p>
-              &bull; Include a prominent CTA button labeled "Rent Now" or "Get
-              Started" that directs users to the rental page or app download.
-            </p>
-          </div>
-        </div>
-      </div>
+     
       <div class="urban-ride">
         <p>Your <span class="title-color">Urban Adventure</span> Begins Here</p>
         <h2>
