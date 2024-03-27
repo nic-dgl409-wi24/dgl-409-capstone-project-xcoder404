@@ -21,9 +21,9 @@ function Kick() {
 <li><b>Portability:</b> Foldable models available, making them convenient for commuting and storage.</li>
 <li><b>Types:</b> Variations include electric kick scooters equipped with motors for assisted propulsion.</li>
 </ol>
-
-<button class="scooter-button" src="/home">Go back</button>
-
+<Link to="/">
+<button class="scooter-button">Go back</button>
+</Link>
 </div>
         </div>
       </body>

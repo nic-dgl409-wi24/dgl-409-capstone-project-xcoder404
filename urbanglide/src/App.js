@@ -14,6 +14,8 @@ import Profile from "./pages/Profile";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 function App() {
+
+
   return (
     <Router>
       <div className="navigation">
@@ -38,6 +40,7 @@ function App() {
             <li>
               <NavLink to="/profile" activeClassName="active">My Profile</NavLink>
             </li>
+            
           </ul>
         </nav>
         </body>

@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+// import "../App.css";
 
 import image1 from "../images/cardmapr-nl-aU-tyT7E0lw-unsplash.jpg";
 import image2 from "../images/scanning.avif";

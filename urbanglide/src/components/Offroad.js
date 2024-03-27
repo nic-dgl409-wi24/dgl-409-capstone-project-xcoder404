@@ -1,5 +1,6 @@
 import React from 'react';
 import image5 from "../images/OIP_1.png";
+import {Link} from "react-router-dom";
 
 
 function Offroad() {
@@ -20,8 +21,9 @@ function Offroad() {
 <li><b>Features:</b> May include features like adjustable handlebars, hand brakes, off-road tires with deep treads, and durable frames to withstand rough conditions.</li>
 
 </ol>
+<Link to="/">
 <button class="scooter-button">Go back</button>
-
+</Link>
 </div>
 
         </div>

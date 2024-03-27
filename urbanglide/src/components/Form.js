@@ -113,6 +113,8 @@ function Form() {
           10
         );
         setRandomMarkers(randomCoords);
+
+        
       } else {
         setError("Please enter a valid postal code of canada");
       }
@@ -193,7 +195,7 @@ function Form() {
            
           </div>
         </div>
-        <h2>Available locations</h2>
+        <h2 id="available-location">Available locations</h2>
 
         {nearbyPlaces?.map((place, index) => (
           <div key={index} class="urban-locations">
