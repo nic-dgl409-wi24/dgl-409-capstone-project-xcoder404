@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { ReactDOM } from "react-dom";
 import { BrowserRouter as Router, Routes, Route, NavLink, Link } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Blogs from "./pages/Blogs";

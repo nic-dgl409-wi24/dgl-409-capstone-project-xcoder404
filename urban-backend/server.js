@@ -9,9 +9,9 @@ const PORT = 5000;
 
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'urbanglide',
+  user: 'n0199525_xcoder',
+  password: 'Meet@572000',
+  database: 'n0199525_urbanglide',
 });
 
 
