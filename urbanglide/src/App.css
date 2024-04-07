@@ -161,6 +161,8 @@ a {
   height: 300px;
   width: 400px;
   overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 /* .urban-cards .card:last-child img {

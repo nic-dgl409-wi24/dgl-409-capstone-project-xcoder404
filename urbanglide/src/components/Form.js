@@ -77,7 +77,7 @@ function Form() {
     }
     try {
       const { data: response } = await axios.get(
-        `http://api.geonames.org/postalCodeSearchJSON?postalcode=${flatZipCode}&country=CA&maxRows=1&username=UrbanGlide`
+        `https://secure.geonames.org/postalCodeSearchJSON?postalcode=${flatZipCode}&country=CA&maxRows=1&username=UrbanGlide`
       );
       console.log("🚀 ~ file: Form.js:18 ~ onClick ~ response:", response);
       if (response.postalCodes.length) {
@@ -101,7 +101,7 @@ function Form() {
         setError("");
         setPostalCode("");
         const { data: nearbyPlacesRes } = await axios.get(
-          `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${latitude}&lng=${longitude}&radius=5&maxRows=5&username=UrbanGlide`
+          `https://secure.geonames.org/findNearbyPlaceNameJSON?lat=${latitude}&lng=${longitude}&radius=5&maxRows=5&username=UrbanGlide`
         );
         console.log("nearbyPlacesRes", nearbyPlacesRes.geonames);
         setNearbyPlaces(nearbyPlacesRes.geonames);
