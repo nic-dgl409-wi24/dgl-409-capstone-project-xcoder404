@@ -91,13 +91,7 @@ function Home() {
         </div>
       </div>
      
-      <div class="urban-ride">
-        <p>Your <span class="title-color">Urban Adventure</span> Begins Here</p>
-        <h2>
-          Find your first <span class="title-color">Ride!!</span>
-        </h2>
      
-      </div>
       </body>
     </div>
   );
