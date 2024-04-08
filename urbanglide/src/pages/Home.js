@@ -27,8 +27,8 @@ function Home() {
             Rent an e-scooter and explore the urban landscape like never before.
             Convenient, eco-friendly, and fun.
           </p>
-          <Link to="/signup">
-          <button className="hero-button">Get Started</button></Link>
+          <Link to="/form">
+          <button className="hero-button">Find an e-scooter</button></Link>
         </div>
       </div>
       <div class="urban-intro">
@@ -96,9 +96,7 @@ function Home() {
         <h2>
           Find your first <span class="title-color">Ride!!</span>
         </h2>
-       <Link to='/form'>
-        <button class="btn-ride">Let's Ride &nbsp; <FaArrowRight /></button>
-        </Link>
+     
       </div>
       </body>
     </div>
