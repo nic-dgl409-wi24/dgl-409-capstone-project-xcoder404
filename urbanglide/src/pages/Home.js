@@ -13,6 +13,7 @@ import {Link} from "react-router-dom";
 
 
 function Home() {
+  
   return (
     <div>
       <body>
@@ -95,7 +96,7 @@ function Home() {
         <h2>
           Find your first <span class="title-color">Ride!!</span>
         </h2>
-        <Link to="/form">
+       <Link to='/form'>
         <button class="btn-ride">Let's Ride &nbsp; <FaArrowRight /></button>
         </Link>
       </div>
