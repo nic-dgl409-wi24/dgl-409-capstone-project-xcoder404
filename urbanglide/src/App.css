@@ -165,6 +165,8 @@ a {
   border-top-right-radius: 20px;
 }
 
+
+
 /* .urban-cards .card:last-child img {
   display: block;
   width: 100%;
@@ -583,6 +585,14 @@ border-radius: 25px;
   object-fit: cover;
 border-top-left-radius: 25px;
 border-top-right-radius: 25px;
+}
+
+.travel-cards h3{
+padding: 10px;
+}
+
+.travel-cards ul{
+  padding: 10px 30px;
 }
 .footer {
   background-color: #202020;

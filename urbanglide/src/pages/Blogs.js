@@ -16,7 +16,10 @@ function Blogs() {
           <div class="blog-image">
             <img src={image}></img>
             <span>INDUSTRY OVERVIEW</span>
-            <h3>Our personal best: Record ridership drives 45% growth in first half of 2023</h3>
+            <h3>
+              Our personal best: Record ridership drives 45% growth in first
+              half of 2023
+            </h3>
           </div>
           <div class="blog-side">
             <h2 class="side-head">MOST RECENT</h2>
@@ -58,11 +61,38 @@ function Blogs() {
           </div>
         </div>
         <div class="travel-guide">
-          <h2>Travle <span class="title-color">Guide</span></h2>
+          <h2>
+            Travle <span class="title-color">Guide</span>
+          </h2>
           <div class="travel-cards">
-            <div><img src={image1} alt=""></img></div>
-            <div><img src={image2}></img></div>
-            <div><img src={image3}></img></div>
+            <div>
+              <img src={image1} alt=""></img>
+              <h3 class="title-color">Bus</h3>
+              <ul><li>Check local bus routes and schedules.</li>
+                <li>Board the bus nearest to the rental location.</li>
+                <li>Follow signs or directions from the bus stop.</li>
+                <li>Estimate travel time based on bus schedule and distance.</li></ul>
+            </div>
+            <div>
+              <img src={image2}></img>
+              <h3 class="title-color">Walk</h3>
+              <ul>
+                <li>Consult map or GPS for walking route.</li>
+                <li>Follow pedestrian pathways and sidewalks.</li>
+                <li>Explore neighborhood scenery along the way.</li>
+                <li>Estimate walking time based on distance and walking speed.</li>
+              </ul>
+            </div>
+            <div>
+              <img src={image3}></img>
+              <h3 class="title-color">Taxi</h3>
+              <ul>
+                <li>Hail a taxi or use a ride-hailing app.</li>
+                <li>Provide rental location address to the taxi driver.</li>
+                <li>Enjoy direct and convenient transportation.</li>
+                <li>Consider traffic conditions for estimated travel time.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </body>
