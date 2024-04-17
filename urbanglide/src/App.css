@@ -425,6 +425,10 @@ a {
 .urban-signup button:hover {
   background-color: #059f05;
 }
+
+.urban-signup input::placeholder{
+  color: white;
+}
 .urban-skip {
   border: 2px solid #00dd00 !important;
   background-color: #202020 !important;

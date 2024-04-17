@@ -67,8 +67,8 @@ function Form() {
   const handleBooking = (index) => {
     
     const newModalStates = [...modalStates];
-    newModalStates[index] = true;
-    setModalStates(newModalStates);
+  newModalStates[index] = !modalStates[index]; // Toggle modal state
+  setModalStates(newModalStates);
   };
   const onClick = async () => {
     setCurrentPostalPlace("");
@@ -219,8 +219,8 @@ function Form() {
         <div key={index} className="urban-locations">
           <h4>{place.name}</h4>
           <button className="book-btn" onClick={() => handleBooking(index)}>
-            More info
-          </button>
+  {modalStates[index] ? "Less info" : "More info"}
+</button>
 
           <Modal
             key={index}
