@@ -2,17 +2,19 @@ const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
 
+const config = require('./config');
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 const PORT = 5000;
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'urbanglide',
-});
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'urbanglide',
+  });
 
 
 

@@ -11,7 +11,8 @@ import {
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import { FaArrowRight } from "react-icons/fa";
+
+import Modal from "./Modal";
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -61,9 +62,13 @@ function Form() {
     setPostalCode(e.target.value);
   };
 
-  
-  const handleBooking = () => {
-    alert("Booking successful!");
+ 
+  const [modalStates, setModalStates] = useState([false, false, false, false, false]);
+  const handleBooking = (index) => {
+    
+    const newModalStates = [...modalStates];
+    newModalStates[index] = true;
+    setModalStates(newModalStates);
   };
   const onClick = async () => {
     setCurrentPostalPlace("");
@@ -113,7 +118,10 @@ function Form() {
           10
         );
         setRandomMarkers(randomCoords);
-
+        document.getElementById("available-location").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
         
       } else {
         setError("Please enter a valid postal code of canada");
@@ -124,7 +132,15 @@ function Form() {
     }
   };
 
-
+  const modalContents = [
+    "1835 piercy avenue, V9N 3G4",
+    "4624 Condensory Rd, V9J 1R6",
+    "254 Muir Road, V9N 4B6,",
+    "1832 Comox Ave, V9M 3M7",
+    "3830 Warren Ave, V0R 2V0",
+  ];
+  
+  
 
 
 
@@ -197,10 +213,25 @@ function Form() {
         </div>
         <h2 id="available-location">Available locations</h2>
 
+        
+
         {nearbyPlaces?.map((place, index) => (
-          <div key={index} class="urban-locations">
-            <h4>{place.name}</h4>
-            <button class="book-btn" onClick={handleBooking}>Book now</button>
+        <div key={index} className="urban-locations">
+          <h4>{place.name}</h4>
+          <button className="book-btn" onClick={() => handleBooking(index)}>
+            More info
+          </button>
+
+          <Modal
+            key={index}
+            isOpen={modalStates[index]}
+            closeModal={() =>
+              setModalStates(
+                modalStates.map((state, i) => (i === index ? false : state))
+              )
+            }
+            content={modalContents[index]}
+          />
           </div>
         ))}
       </body>
